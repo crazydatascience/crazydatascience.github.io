@@ -45,7 +45,7 @@
       if (type == 'opt-in' && didConsent) {
         // enable cookies
         var cookieOK = true;
-        {% if page.comments != false %}
+        {% if page.comments == true %}
         ActivateDISQUS();
         {% endif %}
         ActivateSHARETHIS();
@@ -67,7 +67,7 @@
       if (type == 'opt-in' && didConsent) {
         // enable cookies
         var cookieOK = true;
-        {% if page.comments != false %}
+        {% if page.comments == true %}
         ActivateDISQUS();
         {% endif %}
         ActivateSHARETHIS();
