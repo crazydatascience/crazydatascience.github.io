@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      Published on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.minima.date_format | default: "%A, %-d %b %Y" %}
+        {{ page.date | date: date_format }}
+      </time> | 
+      Last update: <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="dateModified">
+        {% assign date_format = site.minima.date_format | default: "%A, %-d %b %Y" %}
+        {{ page.last_update | date: date_format }}
+      </time>
+      {% if page.author %}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+      {% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {% if jekyll.environment == 'production' %}
+  
+  <div class="fb-like" data-href="https://facebook.com/{{ site.facebook_username }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+  
+  <div class="sharethis-inline-share-buttons" style = "text-align: right;"></div>
+  
+  <script>
+  function ActivateFBLIKE(){(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.9";
+    fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));}
+  </script>
+
+
+  {% endif %}
+
+  {% if site.disqus_shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>

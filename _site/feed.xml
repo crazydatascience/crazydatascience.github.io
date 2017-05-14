@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://crazydata.science/feed.xml" rel="self" type="application/atom+xml" /><link href="https://crazydata.science/" rel="alternate" type="text/html" /><updated>2017-05-03T00:37:32+02:00</updated><id>https://crazydata.science/</id><title type="html">CrazyData.Science</title><subtitle>We live in a big data world. We live in a crazy data world! We need data science!
+</subtitle><author><name>Shuyi Yang</name></author><entry><title type="html">How to install R and RStudio on Ubuntu</title><link href="https://crazydata.science/how-to-install-r-and-rstudio-on-ubuntu.html" rel="alternate" type="text/html" title="How to install R and RStudio on Ubuntu" /><published>2017-04-24T00:31:37+02:00</published><updated>2017-04-24T00:31:37+02:00</updated><id>https://crazydata.science/how-to-install-r-and-rstudio-on-ubuntu</id><content type="html" xml:base="https://crazydata.science/how-to-install-r-and-rstudio-on-ubuntu.html">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;R&lt;/code&gt; is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians and data miners for developing statistical software and data analysis.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RStudio&lt;/code&gt; is a free and open-source integrated development environment (IDE) for R.&lt;/p&gt;
+
+&lt;p&gt;In this tutorial we will install R and RStudio on Ubuntu 16.04, 16.10 and 17.04.&lt;/p&gt;
+
+&lt;p&gt;Firstly, install R and Gdebi with apt (just copy and paste the code into a terminal):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo apt install r-base r-base-dev gdebi&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now, let’s move to the home directory and download the libraries &lt;code class=&quot;highlighter-rouge&quot;&gt;libgstreamer0.10&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;libgstreamer-plugins-base0.10&lt;/code&gt;. At time of this writing, these packages need to be downloaded and installed manually to avoid errors during the installation of RStudio.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~
+wget https://launchpad.net/ubuntu/+archive/primary/+files/libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb 
+wget https://launchpad.net/ubuntu/+archive/primary/+files/libgstreamer-plugins-base0.10-0_0.10.36-2ubuntu0.1_amd64.deb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Then we install them with gdebi:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo gdebi libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb 
+sudo gdebi libgstreamer-plugins-base0.10-0_0.10.36-2ubuntu0.1_amd64.deb &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Finally, we download RStudio and install it!&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget https://download1.rstudio.org/rstudio-1.0.143-amd64.deb
+sudo gdebi rstudio-1.0.143-amd64.deb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Done!&lt;/p&gt;
+
+&lt;p&gt;For more information, check out the &lt;a href=&quot;https://www.r-project.org/&quot;&gt;The R Project&lt;/a&gt; official web site and the homepage of &lt;a href=&quot;https://www.rstudio.com/&quot;&gt;RStudio&lt;/a&gt;.&lt;/p&gt;</content><author><name>Shuyi Yang</name></author><summary type="html">How to install R and RStudio on Ubuntu 16.04, 16.10 and 17.04.</summary></entry></feed>
